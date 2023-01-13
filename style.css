@@ -1,0 +1,18 @@
+.monospace{
+    font-family: monospace;
+}
+#clock {
+    width: 200px;
+    height: 200px;
+    border: 4px dotted black;
+    border-radius: 101px;
+    background-color: white;
+  }
+  /* @media (min-width: 768px) {
+  #clock{
+    width: 300px;
+    height: 300px;
+    border: 6px dotted black;
+    border-radius: 151px;
+  }  
+} */
