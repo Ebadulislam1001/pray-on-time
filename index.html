@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Pray on Time - Homepage</title>
-    <style></style>
   </head>
   <body id="body" class="m-0 p-0 bg-gray-300 h-screen flex flex-col justify-between">
     <!-- header starts -->
@@ -33,49 +32,49 @@
     <!-- main starts -->
     <main class="flex flex-col md:justify-around justify-evenly items-center font-lightoverflow-auto">
       <div id="date-time" class="w-64 my-4 md:my-8 flex flex-col justify-center items-center">
-        <p class="text-3xl lg:text-6xl">09:40</p>
-        <p class="text-2xl lg:text-4xl">Friday, 12 Jan</p>
+        <p id = "curr-time" class="text-3xl lg:text-6xl"></p>
+        <p id = "curr-date" class="text-2xl lg:text-4xl"></p>
       </div>
       <section id="middle-section" class="w-full md:my-8 flex lg:flex-row flex-col justify-evenly items-center font-light">
         <div id="clock-block" class="m-4 monospace flex flex-col items-center justify-between text-center">
           <div id="clock" class="m-4 flex flex-row justify-center items-center">
             <span class="text-center text-3xl">00:00</span>
           </div>
-          <button class="bg-gray-800 h-8 p-y px-4 rounded-xl text-white" type="button" onclick="refresh()">Refresh</button>
+          <!-- <button class="bg-gray-800 h-8 p-y px-4 rounded-xl text-white" type="button" onclick="refresh()">Refresh</button> -->
         </div>
 
         <div id="time-table" class="monospace my-4 mid:my-8 flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
           <div class="flex flex-row m-1 bg-gray-500" id="fajr">
             <div class="w-32 md:w-64">Fajr</div>
-            <div class="w-32 md:w-64">05:52</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div>
           <div class="flex flex-row m-1 bg-gray-400" id="sunrise">
             <div class="w-32 md:w-64">Sunrise</div>
-            <div class="w-32 md:w-64">07:13</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div>
           <div class="flex flex-row m-1 bg-gray-500" id="zuhr">
             <div class="w-32 md:w-64">Zuhr</div>
-            <div class="w-32 md:w-64">12:29</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div>
           <!-- <div class="flex flex-row m-1 bg-gray-400" id="asr-shafii">
             <div class="w-32 md:w-64">Asr (Shafii)</div>
-            <div class="w-32 md:w-64">03:25</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div> -->
           <div class="flex flex-row m-1 bg-gray-400" id="asr-hanafi">
             <div class="w-32 md:w-64">Asr (Hanafi)</div>
-            <div class="w-32 md:w-64">04:09</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div>
           <div class="flex flex-row m-1 bg-gray-500" id="maghrib">
             <div class="w-32 md:w-64">Maghrib</div>
-            <div class="w-32 md:w-64">05:46</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div>
           <!-- <div class="flex flex-row m-1 bg-gray-400" id="isha-shafii">
             <div class="w-32 md:w-64">Isha (Shafii)</div>
-            <div class="w-32 md:w-64">06:38</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div> -->
           <div class="flex flex-row m-1 bg-gray-400" id="isha-hanafi">
             <div class="w-32 md:w-64">Isha (Hanafi)</div>
-            <div class="w-32 md:w-64">07:07</div>
+            <div class="w-32 md:w-64">00:00</div>
           </div>
         </div>
       </section>
@@ -117,4 +116,5 @@
     </footer>
     <!-- footer ends -->
   </body>
+  <script src="/index.js"></script>
 </html>
