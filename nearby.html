@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="index.js"></script>
-  <title>Pray on Time - Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="nearby.js"></script>
+  <title>Namaz Timings in Nearby Masajid</title>
 </head>
 
 <body id="body" class="m-0 p-0 min-h-screen bg-gray-300 flex flex-col justify-between">
@@ -24,29 +24,45 @@
         <span class="ml-3 text-xl">Pray on Time</span>
       </a>
       <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0"
-        href="nearby.html">
-        Nearby
+        href="index.html">
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
+          class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+          <path d="M5 12 h 14 M 12 5 l -7 7 7 7"></path>
         </svg>
+        Home
       </a>
     </div>
   </header>
   <!-- header ends -->
 
   <!-- main starts -->
-  <section id="middle-section" class="w-full md:my-8 flex lg:flex-row flex-col justify-evenly items-center font-light">
-    <div id="clock-block" class="m-4 monospace flex flex-col items-center justify-between text-center">
-      <div id="clock" class="m-4 flex flex-row justify-center items-center">
-        <span class="text-center text-3xl">00:00</span>
+  <section>
+    <h1 class="md:text-3xl text-l text-center font-medium m-6 text-gray-900">Namaz Timings in Nearby Masajid</h1>
+    <main class="m-4 flex flex-col title-font font-light overflow-auto">
+      <div id="time-table"
+        class="monospace my-4 mid:my-8 mx-auto flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
+        <div id="headind-row" class="flex flex-row m-2 mb-4 font-bold underline">
+          <div class="w-64 md:w-96 pl-2 text-left">Masjid</div>
+          <div class="w-16 md:w-32">Jumuah</div>
+          <div class="w-16 md:w-32">Fajr</div>
+          <div class="w-16 md:w-32">Zuhr</div>
+          <div class="w-16 md:w-32">Asr</div>
+          <div class="w-16 md:w-32">Maghrib</div>
+          <div class="w-16 md:w-32">Isha</div>
+        </div>
+        <!-- <div id="data-row-0" class="flex flex-row m-1 bg-gray-500">
+          <div class="w-32 md:w-64 pl-2 text-left">Hari Masjid</div>
+          <div class="w-16 md:w-32">01:35</div>
+          <div class="w-16 md:w-32">06:30</div>
+          <div class="w-16 md:w-32">01:30</div>
+          <div class="w-16 md:w-32">04:30</div>
+          <div class="w-16 md:w-32">05:45</div>
+          <div class="w-16 md:w-32">07:45</div>
+        </div> -->
       </div>
-    </div>
-    <div id="time-table"
-      class="monospace my-4 mid:my-8 flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
-      LOADING .....
-    </div>
+    </main>
   </section>
+
   <!-- main ends -->
 
   <!-- footer starts -->
@@ -60,7 +76,7 @@
         <span class="ml-3 text-xl">Pray on Time</span>
       </a>
 
-      <p class="text-md text-white md:mx-4 md:py-2 my-1">For feedback and suggestions, contact us at -</p>
+      <p class="text-sm text-white md:mx-4 md:py-2 my-1">For feedback and suggestions, contact us at -</p>
 
       <span class="inline-flex md:mt-0 mt-2 justify-center md:justify-start">
         <a href="facebook_link" class="text-gray-500">

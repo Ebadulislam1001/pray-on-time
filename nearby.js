@@ -1,7 +1,7 @@
 // defining constants
 const SHEET_ID = "1V3c2-kDkehR_ViJdsJsgWkpK9vAn233j6Gm7lPOVueM";
 const SHEET_TITLE = "mosque_table";
-const SHEET_RANGE = "A1:J21";
+const SHEET_RANGE = "A1:J13";
 const FULL_URL = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?sheet=" + SHEET_TITLE + "&range=" + SHEET_RANGE;
 // https://docs.google.com/spreadsheets/d/1V3c2-kDkehR_ViJdsJsgWkpK9vAn233j6Gm7lPOVueM/gviz/tq?sheet=mosque_table&range=A1:K21
 
