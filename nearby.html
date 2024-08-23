@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
   <script src="nearby.js"></script>
   <title>Pray on Time - Nearby</title>
 </head>
@@ -24,22 +24,22 @@
         <span class="ml-3 text-xl">Pray on Time</span>
       </a>
       <div class="flex md:ml-auto flex-wrap items-center text-base justify-center">
-        <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0 mx-2"
+        <a class="inline-flex items-center py-1 px-3 mt-4 md:mt-0 mx-2 rounded text-white bg-gray-800 hover:bg-black"
           href="index.html">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+            class="w-4 h-4 mx-1" viewBox="0 0 24 24">
             <path d="M 4 12 L 20 12 M 4 12 L 10 6 M 4 12 L 10 18"></path>
           </svg>
-          Home
+          <span>Home</span>
         </a>
-        <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0 mx-2"
-          href="tasbeeh.html">
-          Tasbeeh
+        <!-- <a class="inline-flex items-center py-1 px-3 mt-4 md:mt-0 mx-2 rounded text-white bg-gray-800 hover:bg-black"
+          href="index.html">
+          <span>Tasbeeh</span>
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+            class="w-4 h-4 mx-1" viewBox="0 0 24 24">
             <path d="M 20 12 L 4 12 M 20 12 L 14 6 M 20 12 L 14 18"></path>
           </svg>
-        </a>
+        </a> -->
       </div>
     </div>
   </header>
@@ -50,24 +50,24 @@
     <h1 class="md:text-3xl text-l text-center font-medium m-6 text-gray-900">Namaz Timings in Nearby Masajid</h1>
     <main class="m-4 flex flex-col title-font font-light overflow-auto">
       <div id="time-table"
-        class="monospace my-4 mid:my-8 mx-auto flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
+        class="my-4 mid:my-8 mx-auto flex flex-col text-center md:text-xl text-l border-2 border-gray-800 rounded-xl font-mono">
         <div id="headind-row" class="flex flex-row m-2 mb-4 font-bold underline">
           <div class="w-64 md:w-96 pl-2 text-left">Masjid</div>
-          <div class="w-16 md:w-32">Jumuah</div>
-          <div class="w-16 md:w-32">Fajr</div>
-          <div class="w-16 md:w-32">Zuhr</div>
-          <div class="w-16 md:w-32">Asr</div>
-          <div class="w-16 md:w-32">Maghrib</div>
-          <div class="w-16 md:w-32">Isha</div>
+          <div class="w-16 md:w-24">Jumuah</div>
+          <div class="w-16 md:w-24">Fajr</div>
+          <div class="w-16 md:w-24">Zuhr</div>
+          <div class="w-16 md:w-24">Asr</div>
+          <div class="w-16 md:w-24">Maghrib</div>
+          <div class="w-16 md:w-24">Isha</div>
         </div>
         <!-- <div id="data-row-0" class="flex flex-row m-1 bg-gray-500">
-          <div class="w-32 md:w-64 pl-2 text-left">Hari Masjid</div>
-          <div class="w-16 md:w-32">01:35</div>
-          <div class="w-16 md:w-32">06:30</div>
-          <div class="w-16 md:w-32">01:30</div>
-          <div class="w-16 md:w-32">04:30</div>
-          <div class="w-16 md:w-32">05:45</div>
-          <div class="w-16 md:w-32">07:45</div>
+          <div class="w-64 md:w-96 pl-2 text-left">Hari Masjid</div>
+          <div class="w-16 md:w-24">01:35</div>
+          <div class="w-16 md:w-24">06:30</div>
+          <div class="w-16 md:w-24">01:30</div>
+          <div class="w-16 md:w-24">04:30</div>
+          <div class="w-16 md:w-24">05:45</div>
+          <div class="w-16 md:w-24">07:45</div>
         </div> -->
       </div>
     </main>

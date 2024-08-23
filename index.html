@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
   <script src="index.js"></script>
   <title>Pray on Time - Homepage</title>
 </head>
@@ -23,29 +23,34 @@
         </svg>
         <span class="ml-3 text-xl">Pray on Time</span>
       </a>
-      <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0 mx-2"
-        href="nearby.html">
-        Nearby
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M 20 12 L 4 12 M 20 12 L 14 6 M 20 12 L 14 18"></path>
-        </svg>
-      </a>
+      <div class="flex md:ml-auto flex-wrap items-center text-base justify-center">
+        <a class="inline-flex items-center py-1 px-3 mt-4 md:mt-0 mx-2 rounded text-white bg-gray-800 hover:bg-black"
+          href="nearby.html">
+          Nearby
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 mx-1" viewBox="0 0 24 24">
+            <path d="M 20 12 L 4 12 M 20 12 L 14 6 M 20 12 L 14 18"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </header>
   <!-- header ends -->
 
   <!-- main starts -->
-  <section id="middle-section" class="w-full md:my-8 flex lg:flex-row flex-col justify-evenly items-center font-light">
-    <div id="clock-block" class="m-4 monospace flex flex-col items-center justify-between text-center">
-      <div id="clock" class="m-4 flex flex-row justify-center items-center">
-        <span id="remaining-time" class="text-center text-3xl">00:00</span>
+  <section id="middle-section" class="w-full h-1/2 md:my-8 flex flex-col justify-evenly items-center font-light font-mono">
+
+      <div id="clock" class="my-8 mid:my-16 flex flex-col justify-center items-center text-center">
+        <p id="current-time" class="lg:text-3xl"></p>
+        <p class="text-xl lg:text-3xl">Time remaining</p>
+        <span id="remaining-time" class="text-center text-3xl lg:text-6xl">00:00</span>
       </div>
-    </div>
+
     <div id="time-table"
-      class="monospace my-4 mid:my-8 flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
+      class="my-8 mid:my-16 flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
       LOADING .....
     </div>
+
   </section>
   <!-- main ends -->
 

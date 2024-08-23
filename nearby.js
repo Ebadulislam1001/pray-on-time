@@ -25,34 +25,34 @@ window.onload = async function () {
       document.getElementById(i)?.append(name);
 
       let jumah = document.createElement("div");
-      jumah.classList.add("w-16", "md:w-32");
+      jumah.classList.add("w-16", "md:w-24");
       jumah.innerText = table[i]?.jumah?.toString()?.replace("-", ":") ?? "";
       document.getElementById(i)?.append(jumah);
 
 
       let fajr = document.createElement("div");
-      fajr.classList.add("w-16", "md:w-32");
+      fajr.classList.add("w-16", "md:w-24");
       fajr.innerText = table[i]?.fajr?.toString()?.replace("-", ":") ?? "";
       document.getElementById(i)?.append(fajr);
 
 
       let zuhr = document.createElement("div");
-      zuhr.classList.add("w-16", "md:w-32");
+      zuhr.classList.add("w-16", "md:w-24");
       zuhr.innerText = table[i]?.zuhr?.toString()?.replace("-", ":") ?? "";
       document.getElementById(i)?.append(zuhr);
 
       let asr = document.createElement("div");
-      asr.classList.add("w-16", "md:w-32");
+      asr.classList.add("w-16", "md:w-24");
       asr.innerText = table[i]?.asr?.toString()?.replace("-", ":") ?? "";
       document.getElementById(i)?.append(asr);
 
       let maghrib = document.createElement("div");
-      maghrib.classList.add("w-16", "md:w-32");
+      maghrib.classList.add("w-16", "md:w-24");
       maghrib.innerText = table[i]?.maghrib?.toString()?.replace("-", ":") ?? "";
       document.getElementById(i)?.append(maghrib);
 
       let isha = document.createElement("div");
-      isha.classList.add("w-16", "md:w-32");
+      isha.classList.add("w-16", "md:w-24");
       isha.innerText = table[i]?.isha?.toString()?.replace("-", ":") ?? "";
       document.getElementById(i)?.append(isha);
     }
@@ -85,7 +85,7 @@ async function fetchDataFromSheet() {
     const data = JSON.parse(dataJson);
     const rawTable = data.table.rows;
     rawTable.shift();
-    console.log(rawTable);
+    // console.log(rawTable);
     const table = rawTable.map(row => ({
       name: row.c[1].v,
       area: row.c[2].v,

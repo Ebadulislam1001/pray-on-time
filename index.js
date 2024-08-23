@@ -18,7 +18,9 @@ function dayOfYear() {
 }
 
 window.onload = async function () {
+    // showCurrentTime();
     timeRemaining();
+    // setInterval(showCurrentTime, 30000);
     setInterval(timeRemaining, 1000);
     try {
         const table = await fetchDataFromSheet();
@@ -74,7 +76,7 @@ async function fetchDataFromSheet() {
 
 async function timeRemaining() {
     try {
-        document.getElementById("remaining-time").innerText = "";
+        document.getElementById("remaining-time").innerText = "  :  ";
         const now = new Date();
         const currentHour = now.getHours();
         const currentMinute = now.getMinutes();
@@ -115,3 +117,16 @@ function displayFormat(remainingTimeInMinutes) {
     const minutes = (remainingTimeInMinutes % 60).toString().padStart(2, '0');
     return `${hours}:${minutes}`;
 }
+
+// async function showCurrentTime() {
+//         const now = new Date();
+//         const date = now.getDate().toString().padStart(2, '0');
+//         const month = (now.getMonth() + 1).toString().padStart(2, '0');
+//         const year = now.getFullYear();
+//         const hour = now.getHours().toString().padStart(2, '0');
+//         const minute = now.getMinutes().toString().padStart(2, '0');
+//         const second = now.getSeconds().toString().padStart(2, '0');
+//         document.getElementById("current-time").innerText = `${hour}:${minute}:${second}\n${date}/${month}/${year}`;
+//         // document.getElementById("current-time").innerText = now;
+//         // document.getElementById("current-time").innerText = now.toLocaleTimeString();
+// }
