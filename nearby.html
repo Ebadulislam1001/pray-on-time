@@ -9,7 +9,7 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
   <script src="nearby.js"></script>
-  <title>Namaz Timings in Nearby Masajid</title>
+  <title>Pray on Time - Nearby</title>
 </head>
 
 <body id="body" class="m-0 p-0 min-h-screen bg-gray-300 flex flex-col justify-between">
@@ -23,14 +23,24 @@
         </svg>
         <span class="ml-3 text-xl">Pray on Time</span>
       </a>
-      <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0"
-        href="index.html">
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 mr-1" viewBox="0 0 24 24">
-          <path d="M5 12 h 14 M 12 5 l -7 7 7 7"></path>
-        </svg>
-        Home
-      </a>
+      <div class="flex md:ml-auto flex-wrap items-center text-base justify-center">
+        <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0 mx-2"
+          href="index.html">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+            <path d="M 4 12 L 20 12 M 4 12 L 10 6 M 4 12 L 10 18"></path>
+          </svg>
+          Home
+        </a>
+        <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0 mx-2"
+          href="tasbeeh.html">
+          Tasbeeh
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+            <path d="M 20 12 L 4 12 M 20 12 L 14 6 M 20 12 L 14 18"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </header>
   <!-- header ends -->

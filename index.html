@@ -23,12 +23,12 @@
         </svg>
         <span class="ml-3 text-xl">Pray on Time</span>
       </a>
-      <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0"
+      <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-white mt-4 md:mt-0 mx-2"
         href="nearby.html">
         Nearby
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
+          <path d="M 20 12 L 4 12 M 20 12 L 14 6 M 20 12 L 14 18"></path>
         </svg>
       </a>
     </div>
@@ -39,7 +39,7 @@
   <section id="middle-section" class="w-full md:my-8 flex lg:flex-row flex-col justify-evenly items-center font-light">
     <div id="clock-block" class="m-4 monospace flex flex-col items-center justify-between text-center">
       <div id="clock" class="m-4 flex flex-row justify-center items-center">
-        <span class="text-center text-3xl">00:00</span>
+        <span id="remaining-time" class="text-center text-3xl">00:00</span>
       </div>
     </div>
     <div id="time-table"
