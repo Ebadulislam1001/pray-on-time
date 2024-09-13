@@ -5,17 +5,6 @@ const SHEET_TITLE = "annual_time_table";
 const SHEET_RANGE = "A" + DAY_NUMBER + ":G" + DAY_NUMBER;
 const FULL_URL = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?sheet=" + SHEET_TITLE + "&range=" + SHEET_RANGE;
 
-function dayOfYear() {
-    const now = new Date();
-    const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    let dayNumber = 0;
-    for (let i = 0; i < now.getMonth(); i++) {
-        dayNumber += daysInMonth[i];
-    }
-    dayNumber += now.getDate();
-    // console.log(dayNumber);
-    return dayNumber;
-}
 
 window.onload = async function () {
     // showCurrentTime();
@@ -24,7 +13,7 @@ window.onload = async function () {
     setInterval(timeRemaining, 1000);
     try {
         const table = await fetchDataFromSheet();
-        // console.log(table);
+        console.log(table);
 
         document.getElementById("time-table").innerHTML = "";
 
@@ -55,6 +44,54 @@ window.onload = async function () {
     }
 };
 
+async function timeRemaining() {
+    try {
+        document.getElementById("remaining-time").innerText = "  :  ";
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentMinute = now.getMinutes();
+        const currentTimeInMinutes = currentHour * 60 + currentMinute;
+        // console.log("Current time in minutes: " + currentTimeInMinutes);
+
+        const table = await fetchDataFromSheet();
+        let nextEventIndex = 1;
+        let remainingTimeInMinutes = (1440 - currentTimeInMinutes) + (minuteUnits(table[1].time, false));
+        for (let i = 1; i < table.length; i++) {
+            const eventTimeInMinutes = minuteUnits(table[i].time, i > 3);
+            // console.log("Event time: " + eventTimeInMinutes);
+            if (eventTimeInMinutes >= currentTimeInMinutes) {
+                remainingTimeInMinutes = eventTimeInMinutes - currentTimeInMinutes;
+                nextEventIndex = i;
+                // console.log("Time remaining: " + timeRemaining);
+                break;
+            }
+        }
+        // console.log("Time remaining: " + remainingTimeInMinutes);
+        const remainingTimeToBeDisplayed = displayFormat(remainingTimeInMinutes);
+        // console.log("Time remaining: " + remainingTimeToBeDisplayed);
+
+        document.getElementById("remaining-time").innerText = remainingTimeToBeDisplayed;
+        const eventNames = ["Today", "Fajr", "Sunrise", "Zuhr", "Asr", "Maghrib", "Isha"];
+        document.getElementById("next-event-name").innerText = `${eventNames[nextEventIndex]} will start in`;
+
+    } catch (error) {
+        console.error("Error occurred in timeRemaining function:", error);
+        return;
+    }
+}
+
+function dayOfYear() {
+    const now = new Date();
+    const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let dayNumber = 0;
+    for (let i = 0; i < now.getMonth(); i++) {
+        dayNumber += daysInMonth[i];
+    }
+    dayNumber += now.getDate();
+    // console.log(dayNumber);
+    return dayNumber;
+}
+
 async function fetchDataFromSheet() {
     try {
         const res = await fetch(FULL_URL);
@@ -74,42 +111,9 @@ async function fetchDataFromSheet() {
     }
 }
 
-async function timeRemaining() {
-    try {
-        document.getElementById("remaining-time").innerText = "  :  ";
-        const now = new Date();
-        const currentHour = now.getHours();
-        const currentMinute = now.getMinutes();
-        const currentTimeInMinutes = currentHour * 60 + currentMinute;
-        // console.log("Current time: " + currentTimeInMinutes);
-        
-        const table = await fetchDataFromSheet();
-
-        let remainingTimeInMinutes = 1440 - currentTimeInMinutes + minuteUnits(table[1].time, false);
-        for (let i = 1; i < table.length; i++) {
-            const eventTimeInMinutes = minuteUnits(table[i].time, i>3);
-            // console.log("Event time: " + eventTimeInMinutes);
-            if(eventTimeInMinutes > currentTimeInMinutes) {
-                remainingTimeInMinutes = eventTimeInMinutes - currentTimeInMinutes;
-                // console.log("Time remaining: " + timeRemaining);
-                break;
-            }
-        }
-        // console.log("Time remaining: " + remainingTimeInMinutes);
-        const remainingTimeToBeDisplayed = displayFormat(remainingTimeInMinutes);
-        // console.log("Time remaining: " + remainingTimeToBeDisplayed);
-
-        document.getElementById("remaining-time").innerText = remainingTimeToBeDisplayed;
-
-    } catch (error) {
-        console.error("Error occurred in timeRemaining function:", error);
-        return;
-    }
-}
-
 function minuteUnits(time, isPM) {
     const [hour, minute] = time.split(":");
-    return (Number(hour)+ (isPM ? 12 : 0)) * 60 + Number(minute);
+    return (Number(hour) + (isPM ? 12 : 0)) * 60 + Number(minute);
 }
 
 function displayFormat(remainingTimeInMinutes) {
@@ -117,16 +121,3 @@ function displayFormat(remainingTimeInMinutes) {
     const minutes = (remainingTimeInMinutes % 60).toString().padStart(2, '0');
     return `${hours}:${minutes}`;
 }
-
-// async function showCurrentTime() {
-//         const now = new Date();
-//         const date = now.getDate().toString().padStart(2, '0');
-//         const month = (now.getMonth() + 1).toString().padStart(2, '0');
-//         const year = now.getFullYear();
-//         const hour = now.getHours().toString().padStart(2, '0');
-//         const minute = now.getMinutes().toString().padStart(2, '0');
-//         const second = now.getSeconds().toString().padStart(2, '0');
-//         document.getElementById("current-time").innerText = `${hour}:${minute}:${second}\n${date}/${month}/${year}`;
-//         // document.getElementById("current-time").innerText = now;
-//         // document.getElementById("current-time").innerText = now.toLocaleTimeString();
-// }
