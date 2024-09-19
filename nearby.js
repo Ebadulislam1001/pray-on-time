@@ -20,7 +20,7 @@ window.onload = async function () {
       document.getElementById("time-table").append(mosque);
 
       let name = document.createElement("div");
-      name.classList.add("w-64", "md:w-96", "pl-2", "text-left")
+      name.classList.add("w-64", "md:w-96", "pl-2", "text-left", "font-serif")
       name.innerText = table[i]?.name ?? "";
       document.getElementById(i)?.append(name);
 

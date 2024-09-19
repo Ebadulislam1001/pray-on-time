@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- <link rel="stylesheet" href="styles.css" /> -->
   <script src="index.js"></script>
   <title>Pray on Time - Homepage</title>
 </head>
@@ -16,16 +15,16 @@
   <!-- header starts -->
   <header class="bg-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row justify-between items-center">
-      <a href="/" class="flex title-font font-medium items-center text-gray-900 mr-8">
+      <a href="./" class="flex title-font font-medium items-center text-gray-900 mr-8">
         <svg fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
           class="w-10 h-10 p-2 bg-white rounded-full" viewBox="0 0 24 24">
           <path d="M 12 2 L 12 22 M 12 2 A 7 6 0 0 0 12 15 M 12 2 A 7 6 1 1 1 12 15 M 8 22 L 16 22"></path>
         </svg>
-        <span class="ml-3 text-xl">Pray on Time</span>
+        <span class="ml-3 text-xl ">Pray on Time</span>
       </a>
       <div class="flex md:ml-auto flex-wrap items-center text-base justify-center">
         <a class="inline-flex items-center py-1 px-3 mt-4 md:mt-0 mx-2 rounded text-white bg-gray-800 hover:bg-black"
-          href="/nearby">
+          href="./nearby">
           Nearby
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             class="w-4 h-4 mx-1" viewBox="0 0 24 24">
@@ -38,16 +37,16 @@
   <!-- header ends -->
 
   <!-- main starts -->
-  <section id="middle-section" class="w-full h-1/2 md:my-8 flex flex-col justify-evenly items-center font-light font-mono">
+  <section id="middle-section" class="w-full h-1/2 md:my-8 flex flex-col justify-evenly items-center font-light">
 
       <div id="clock" class="my-8 mid:my-16 flex flex-col justify-center items-center text-center">
         <!-- <p id="current-time" class="lg:text-3xl"></p> -->
-        <p id = "next-event-name" class="text-xl lg:text-3xl">Time remaining...</p>
-        <span id="remaining-time" class="text-center text-3xl lg:text-6xl">00:00</span>
+        <p id = "next-event-name" class="text-xl lg:text-3xl font-serif font-bold">Time remaining...</p>
+        <span id="remaining-time" class="text-center text-3xl lg:text-6xl font-mono">00:00</span>
       </div>
 
     <div id="time-table"
-      class="my-8 mid:my-16 flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl">
+      class="my-8 mid:my-16 flex flex-col text-center md:text-2xl text-l border-2 border-gray-800 rounded-xl font-mono">
       LOADING ...
     </div>
 
@@ -57,7 +56,7 @@
   <!-- footer starts -->
   <footer class="bg-gray-600 body-font">
     <div class="container md:px-5 md:py-8 p-4 mx-auto flex items-center justify-between md:flex-row flex-col">
-      <a href="/" class="flex title-font font-medium items-center text-gray-900 md:mr-auto">
+      <a href="./" class="flex title-font font-medium items-center text-gray-900 md:mr-auto">
         <svg fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
           class="w-10 h-10 p-2 bg-white rounded-full" viewBox="0 0 24 24">
           <path d="M 12 2 L 12 22 M 12 2 A 7 6 0 0 0 12 15 M 12 2 A 7 6 1 1 1 12 15 M 8 22 L 16 22"></path>
@@ -68,20 +67,20 @@
       <p class="text-md text-white md:mx-4 md:py-2 my-1">For feedback and suggestions, contact us at -</p>
 
       <span class="inline-flex md:mt-0 mt-2 justify-center md:justify-start">
-        <a href="facebook_link" class="text-gray-500">
+        <a href="./facebook" class="text-gray-500">
           <svg fill="black" stroke="curentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
             class="w-5 h-5" viewBox="0 0 24 24">
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
           </svg>
         </a>
-        <a href="instagram_link" class="ml-3 text-gray-500">
+        <a href="./instagram" class="ml-3 text-gray-500">
           <svg fill="none" stroke="black" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
             stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
           </svg>
         </a>
-        <a href="linkedin_link" class="ml-3 text-gray-500">
+        <a href="./linkedin" class="ml-3 text-gray-500">
           <svg fill="black" stroke="black" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
             stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
             <path stroke="none"
