@@ -11,7 +11,7 @@ window.onload = async function () {
     globalTable = await fetchDataFromSheet();
     timeRemaining();
     // setInterval(showCurrentTime, 30000);
-    setInterval(timeRemaining, 1000);
+    setInterval(timeRemaining, 500);
     try {
         const table = await fetchDataFromSheet();
         console.log(table);
