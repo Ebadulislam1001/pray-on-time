@@ -4,13 +4,14 @@ const SHEET_ID = "1V3c2-kDkehR_ViJdsJsgWkpK9vAn233j6Gm7lPOVueM";
 const SHEET_TITLE = "annual_time_table";
 const SHEET_RANGE = "A" + DAY_NUMBER + ":G" + DAY_NUMBER;
 const FULL_URL = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?sheet=" + SHEET_TITLE + "&range=" + SHEET_RANGE;
-
+let globalTable = [];
 
 window.onload = async function () {
     // showCurrentTime();
+    globalTable = await fetchDataFromSheet();
     timeRemaining();
     // setInterval(showCurrentTime, 30000);
-    setInterval(timeRemaining, 1000);
+    setInterval(timeRemaining, 500);
     try {
         const table = await fetchDataFromSheet();
         console.log(table);
@@ -46,14 +47,22 @@ window.onload = async function () {
 
 async function timeRemaining() {
     try {
+        if(dayOfYear() + 1 === DAY_NUMBER+1){
+            // so its a new day, will happen at 11.59 -> 12.00 
+            // reload initiated to get the new day data
+            console.log("new day detected");
+            // DAY_NUMBER = dayOfYear()+1;
+            location.reload();
+        }
         document.getElementById("remaining-time").innerText = "  :  ";
         const now = new Date();
         const currentHour = now.getHours();
         const currentMinute = now.getMinutes();
         const currentTimeInMinutes = currentHour * 60 + currentMinute;
         // console.log("Current time in minutes: " + currentTimeInMinutes);
-
-        const table = await fetchDataFromSheet();
+        
+        // const table = await fetchDataFromSheet();
+        const table = globalTable;
         let nextEventIndex = 1;
         let remainingTimeInMinutes = (1440 - currentTimeInMinutes) + (minuteUnits(table[1].time, false));
         for (let i = 1; i < table.length; i++) {
@@ -71,6 +80,15 @@ async function timeRemaining() {
         // console.log("Time remaining: " + remainingTimeToBeDisplayed);
 
         document.getElementById("remaining-time").innerText = remainingTimeToBeDisplayed;
+        let time_text = document.getElementById("remaining-time");
+        const style = window.getComputedStyle(time_text);
+        if (style.visibility === 'hidden') {
+          // console.log('The element has visibility: hidden.');
+            time_text.style.visibility = 'visible';    
+        } else {
+          // console.log('The element is visible.');
+            time_text.style.visibility = 'hidden';
+        }
         const eventNames = ["Today", "Fajr", "Sunrise", "Zuhr", "Asr", "Maghrib", "Isha"];
         document.getElementById("next-event-name").innerText = `${eventNames[nextEventIndex]} will start in`;
 
